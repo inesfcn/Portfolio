@@ -1,0 +1,193 @@
+c@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f6f0ed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Barlow", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(8, 75px) ;
+  grid-template-rows: repeat(8, 75px);
+  justify-content: center;
+}
+
+
+.triangle {
+  width: 0;
+  height: 0;
+}
+
+/* BIG TRIANGLES */
+.big-triangle-pink {
+  
+  grid-row: 2/span 4;
+  grid-column: 5 / span 2;
+  border-right: 150px solid #db7f67;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  animation: big-pink1 0.5s 1s 1 forwards, big-pink2 1s 3s 1 forwards,
+    big-pink3 1s 4s 1 forwards;    
+    /* transform: translate(-180%, -23%) rotate(-180deg) */
+}
+
+@keyframes big-pink1 {
+  100% {
+    transform: translateY(78%) translateX(-14%) rotate(-45deg);
+  }
+}
+
+@keyframes big-pink2 {
+  100% {
+     transform: translate(-30%,45%) rotate(-180deg) 
+  }
+}
+
+@keyframes big-pink3 {
+  100% {
+    grid-column: 1/3;
+  }
+}
+
+.big-triangle-blue {
+  grid-row:2/span 2 ;
+  grid-column: 3/span 4;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 150px solid #4e5283;
+  animation: big-blue1 0.5s 1s 1 forwards, big-blue2 1s 3s 1 forwards;
+  /* transform: translate(-38%, -50%) rotate(360deg); */
+}
+
+@keyframes big-blue1 {
+  100% {
+     transform: translate(50%, 150%);
+  }
+}
+
+@keyframes big-blue2 {
+  100% {
+    transform: translate(17.5%, 246%) rotate(-45deg);
+  }
+}
+
+.medium-triangle {
+  grid-row: 4/span 2;
+  grid-column: 3/ span 2;
+  border-left: 150px solid #fdca40;
+  border-top: 150px solid transparent;
+  animation: medium1 0.5s 1s 1 forwards, medium2 1s 3s 1 forwards;
+  /* transform: translate(20%, 10%) rotate(45deg); */
+}
+
+@keyframes medium1 {
+  100% {
+    transform: translate(50%, 70%) rotate(45deg);
+  }
+}
+
+@keyframes medium2 {
+  100% {
+     transform: translate(20%, 10%) rotate(45deg);
+  }
+}
+
+/* SMALL TRIANGLES */
+.small-triangle-yellow {
+  grid-row: 5/span 1;
+  grid-column: 5/span 1;
+  border-bottom: 75px solid #ec9a29;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  animation: small-yellow1 0.5s 1s 1 forwards, small-yellow2 1s 3s 1 forwards;
+  /* transform: translate(-105%, -370%) rotate(90deg); */
+}
+
+@keyframes small-yellow1 {
+  100% {
+    transform: translate(-67%, -413%) rotate(45deg);
+  }
+}
+
+@keyframes small-yellow2 {
+  100% {
+    transform: translate(-105%, -370%) rotate(90deg);
+  }
+}
+
+.small-triangle-green {
+  grid-row: 3/span 2;
+  grid-column: 4/span 1;;
+  border-left: 75px solid #4b8f8c;
+  border-top: 75px solid transparent;
+  border-bottom: 75px solid transparent;
+  animation: small-green1 0.5s 1s 1 forwards, small-green2 1s 3s 1 forwards;
+  /* transform: translate(-211%, -21%) rotate(90deg); */
+}
+
+@keyframes small-green1 {
+  100% {
+    transform: translateY( 50%);
+  }
+}
+
+@keyframes small-green2 {
+  100% {
+    transform: translate(40%, -110%) rotate(180deg);
+  }
+}
+
+.square {
+  grid-row: 4/span 2;
+  grid-column: 4/span 2;
+  width: 150px;
+  height: 150px;
+  background-color: #f06543;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: square1 0.5s 1s 1 forwards, square2 1s 3s 1 forwards;
+  /* transform: translate(0,-50%); */
+}
+
+ @keyframes square1 {
+  100% {
+    transform: translateY(-50%);
+  }
+} 
+
+@keyframes square2 {
+  100% {
+    transform: translate(-30%,-110%);
+  }
+}
+
+.polygon {
+  grid-row: 2/span 2;
+  grid-column: 3/span 1;
+  top: 0;
+  height: 224px;
+  width: 75px;
+  background-color: #434343;
+  clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
+  animation: polygon1 0.5s 1s 1 forwards, polygon2 1s 3s 1 forwards;
+  /* transform: translate(431%, 148.5%) rotate(225deg) scaleX(-1); */
+}
+
+@keyframes polygon1 {
+  100% {
+    transform: translate(200%, -33%);
+  }
+}
+
+@keyframes polygon2 {
+  100% {
+    transform: translate(431%, 148.5%) rotate(225deg) scaleX(-1);
+  }
+}
