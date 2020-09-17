@@ -1,4 +1,4 @@
-c@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   margin: 0;
@@ -11,32 +11,122 @@ c@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: #f6f0ed;
-  font-family: Arial, Helvetica, sans-serif;
   font-family: "Barlow", sans-serif;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(8, 75px) ;
   grid-template-rows: repeat(8, 75px);
-  justify-content: center;
+  justify-content: center; */
 }
-
 
 .triangle {
   width: 0;
   height: 0;
 }
 
-/* BIG TRIANGLES */
+.main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  /* grid-template-columns: repeat(8, 75px);
+  grid-template-rows: repeat(8, 75px); */
+  justify-content: center;
+  animation: main-div 1s 4s 1 forwards;
+  grid-template-columns: 75px 75px 1fr 1fr 1frpx;
+  grid-template-rows: 75px 75px 75px 1fr 1fr;
+}
+
+/* @keyframes main-div {
+  100% {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+} */
+
+/* SHAPES */
 .big-triangle-pink {
-  
-  grid-row: 2/span 4;
+  grid-row: 2 / span 4;
   grid-column: 5 / span 2;
   border-right: 150px solid #db7f67;
   border-top: 150px solid transparent;
   border-bottom: 150px solid transparent;
+  grid-row: 1/4;
+  grid-column: 1/3;
+  transform: rotate(-180deg);
+}
+
+.big-triangle-blue {
+  position: relative;
+  grid-row: 2 / span 2;
+  grid-column: 3 / span 4;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 150px solid #4e5283;
+  grid-row: 1/4;
+  grid-column: 1/3;
+}
+
+.medium-triangle {
+  grid-row: 4 / span 2;
+  grid-column: 3 / span 2;
+  border-left: 150px solid #fdca40;
+  border-top: 150px solid transparent;
+  position: absolute;
+  opacity: 0;
+}
+
+.small-triangle-yellow {
+  grid-row: 5 / span 1;
+  grid-column: 5 / span 1;
+  border-bottom: 75px solid #ec9a29;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  position: absolute;
+  opacity: 0;
+}
+
+.small-triangle-green {
+  grid-row: 3 / span 2;
+  grid-column: 4 / span 1;
+  border-left: 75px solid #4b8f8c;
+  border-top: 75px solid transparent;
+  border-bottom: 75px solid transparent;
+  grid-column: 1/3;
+  grid-row: 3/4;
+  transform: translate(35px, -37px) rotate(90deg);
+}
+
+.square {
+  grid-row: 4 / span 2;
+  grid-column: 4 / span 2;
+  width: 150px;
+  height: 150px;
+  background-color: #f06543;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+
+.polygon {
+  grid-row: 2 / span 2;
+  grid-column: 3 / span 1;
+  top: 0;
+  height: 224px;
+  width: 75px;
+  background-color: #434343;
+  clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
+  position: absolute;
+  opacity: 0;
+}
+
+/* FIRST ANIMATIONS
+
+/* BIG TRIANGLES */
+/* .big-triangle-pink {
   animation: big-pink1 0.5s 1s 1 forwards, big-pink2 1s 3s 1 forwards,
-    big-pink3 1s 4s 1 forwards;    
-    /* transform: translate(-180%, -23%) rotate(-180deg) */
+    big-pink3 1s 4s 1 forwards;
 }
 
 @keyframes big-pink1 {
@@ -47,29 +137,26 @@ body {
 
 @keyframes big-pink2 {
   100% {
-     transform: translate(-30%,45%) rotate(-180deg) 
+    transform: translate(-30%, 45%) rotate(180deg);
   }
 }
 
 @keyframes big-pink3 {
   100% {
+    transform: rotate(180deg) translate(0, 0);
+    grid-row: 1/3;
     grid-column: 1/3;
   }
-}
+} */
 
-.big-triangle-blue {
-  grid-row:2/span 2 ;
-  grid-column: 3/span 4;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 150px solid #4e5283;
-  animation: big-blue1 0.5s 1s 1 forwards, big-blue2 1s 3s 1 forwards;
-  /* transform: translate(-38%, -50%) rotate(360deg); */
+/* .big-triangle-blue {
+  animation: big-blue1 0.5s 1s 1 forwards, big-blue2 1s 3s 1 forwards,
+    big-blue3 1s 4s 1 forwards;
 }
 
 @keyframes big-blue1 {
   100% {
-     transform: translate(50%, 150%);
+    transform: translate(50%, 150%);
   }
 }
 
@@ -79,13 +166,17 @@ body {
   }
 }
 
-.medium-triangle {
-  grid-row: 4/span 2;
-  grid-column: 3/ span 2;
-  border-left: 150px solid #fdca40;
-  border-top: 150px solid transparent;
-  animation: medium1 0.5s 1s 1 forwards, medium2 1s 3s 1 forwards;
-  /* transform: translate(20%, 10%) rotate(45deg); */
+@keyframes big-blue3 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    grid-row: 1/3;
+    grid-column: 1/3;
+  }
+} */
+
+/* .medium-triangle {
+  animation: medium1 0.5s 1s 1 forwards, medium2 1s 3s 1 forwards,
+    medium3 0.1s 3.8s 1 forwards;
 }
 
 @keyframes medium1 {
@@ -96,19 +187,22 @@ body {
 
 @keyframes medium2 {
   100% {
-     transform: translate(20%, 10%) rotate(45deg);
+    transform: translate(20%, 10%) rotate(45deg);
   }
 }
 
+@keyframes medium3 {
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+} */
+
 /* SMALL TRIANGLES */
-.small-triangle-yellow {
-  grid-row: 5/span 1;
-  grid-column: 5/span 1;
-  border-bottom: 75px solid #ec9a29;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-  animation: small-yellow1 0.5s 1s 1 forwards, small-yellow2 1s 3s 1 forwards;
-  /* transform: translate(-105%, -370%) rotate(90deg); */
+
+/* .small-triangle-yellow {
+  animation: small-yellow1 0.5s 1s 1 forwards, small-yellow2 1s 3s 1 forwards,
+    small-yellow3 0.1s 4s 1 forwards;
 }
 
 @keyframes small-yellow1 {
@@ -123,19 +217,21 @@ body {
   }
 }
 
-.small-triangle-green {
-  grid-row: 3/span 2;
-  grid-column: 4/span 1;;
-  border-left: 75px solid #4b8f8c;
-  border-top: 75px solid transparent;
-  border-bottom: 75px solid transparent;
-  animation: small-green1 0.5s 1s 1 forwards, small-green2 1s 3s 1 forwards;
-  /* transform: translate(-211%, -21%) rotate(90deg); */
+@keyframes small-yellow3 {
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+} */
+
+/* .small-triangle-green {
+  animation: small-green1 0.5s 1s 1 forwards, small-green2 1s 3s 1 forwards,
+    small-green3 1s 4s 1 forwards;
 }
 
 @keyframes small-green1 {
   100% {
-    transform: translateY( 50%);
+    transform: translateY(50%);
   }
 }
 
@@ -145,39 +241,44 @@ body {
   }
 }
 
-.square {
-  grid-row: 4/span 2;
-  grid-column: 4/span 2;
-  width: 150px;
-  height: 150px;
-  background-color: #f06543;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation: square1 0.5s 1s 1 forwards, square2 1s 3s 1 forwards;
-  /* transform: translate(0,-50%); */
+@keyframes small-green3 {
+  100% {
+    transform: translate(38px, 60px) rotate(90deg);
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+} */
+
+/* SQUARE */
+/* .square {
+  animation: square1 0.5s 1s 1 forwards, square2 1s 3s 1 forwards,
+    square3 1s 4s 1 forwards;
 }
 
- @keyframes square1 {
+@keyframes square1 {
   100% {
     transform: translateY(-50%);
   }
-} 
+}
 
 @keyframes square2 {
   100% {
-    transform: translate(-30%,-110%);
+    transform: translate(-30%, -110%);
   }
 }
 
-.polygon {
-  grid-row: 2/span 2;
-  grid-column: 3/span 1;
-  top: 0;
-  height: 224px;
-  width: 75px;
-  background-color: #434343;
-  clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
-  animation: polygon1 0.5s 1s 1 forwards, polygon2 1s 3s 1 forwards;
-  /* transform: translate(431%, 148.5%) rotate(225deg) scaleX(-1); */
+@keyframes square3 {
+  100% {
+    transform: translate(0, 0);
+    grid-row: 3/4;
+    grid-column: 3;
+  }
+} */
+
+/* POLYGON */
+/* .polygon {
+  animation: polygon1 0.5s 1s 1 forwards, polygon2 1s 3s 1 forwards,
+    polygon3 0.1s 4s 1 forwards;
 }
 
 @keyframes polygon1 {
@@ -190,4 +291,203 @@ body {
   100% {
     transform: translate(431%, 148.5%) rotate(225deg) scaleX(-1);
   }
+}
+
+@keyframes polygon3 {
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+} */
+
+/* ***********************page****************************** */
+
+.h1 {
+  position: absolute;
+  font-size: 1.3rem;
+  bottom: 50px;
+  left: -28px;
+  color: #f6f0ed;
+  transform: rotate(-45deg);
+}
+
+.text {
+  margin-top: -60px;
+  grid-column: 3/4;
+  grid-row: 4/5;
+  font-size: 2rem;
+}
+
+.text h1 {
+  color: #f06543;
+}
+
+/* *****************MOVING TRIANGLES*************  */
+.moving-triangle,
+.moving-triangle2,
+.moving-triangle3,
+.moving-triangle4 {
+  height: 0;
+  width: 0;
+  border-bottom: 75px solid #e9ec2936;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+}
+
+.moving-triangle {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  animation: moving-triangle 20s infinite alternate-reverse;
+}
+
+.moving-triangle2 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  animation: moving-triangle2 20s infinite alternate-reverse;
+}
+
+.moving-triangle3 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  animation: moving-triangle3 20s infinite alternate-reverse;
+}
+
+.moving-triangle4 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  animation: moving-triangle4 20s infinite alternate-reverse;
+}
+
+@keyframes moving-triangle {
+  0% {
+    transform: translate(0px, 0px) rotate(20deg);
+  }
+
+  50% {
+    transform: translate(-50%, 20%);
+  }
+
+  100% {
+    transform: translate(0px, 0px) rotate(20deg);
+  }
+}
+
+@keyframes moving-triangle2 {
+  0% {
+    transform: translate(0px, 0px) rotate(45deg);
+  }
+
+  50% {
+    transform: translate(-50%, 20%) rotate(-25deg);
+  }
+
+  100% {
+    transform: translate(0px, 45deg);
+  }
+}
+
+@keyframes moving-triangle3 {
+  0% {
+    transform: translate(0px, 0px) rotate(95deg);
+  }
+
+  50% {
+    transform: translate(-70%, 20%) rotate(45deg);
+  }
+
+  100% {
+    transform: translate(0px, 95deg);
+  }
+}
+
+@keyframes moving-triangle4 {
+  0% {
+    transform: translate(0px, 0px) rotate(180deg);
+  }
+
+  50% {
+    transform: translate(-70%, 20%) rotate(225deg);
+  }
+
+  100% {
+    transform: translate(0px, 180deg);
+  }
+}
+
+/****************** DROPDOWN MENU **************/
+/* Style The Dropdown Button */
+.dropbtn {
+  height: 75px;
+  width: 150px;
+  background-color: #4b8f8c;
+  color: white;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  cursor: pointer;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  z-index: 3;
+  position: relative;
+  display: inline-block;
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  height: 75px;
+  width: 150px;
+  background-color: #4b8f8c;
+  color: white;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+  color: #4b8f8c;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: white;
+  color: #4b8f8c;
+}
+
+/* **************ARROW DOWN******************* */
+.arrow-down {
+  font-weight: 200;
+  font-size: 6rem;
+  color: #4e5283d3;
+  grid-row: 5/6;
+  grid-column: 3/4;
+  transition: 0.3s;
+}
+
+.arrow-down a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.arrow-down:hover {
+  color: #db7f67;
+  transform: translateY(40px);
 }
