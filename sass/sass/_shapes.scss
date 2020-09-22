@@ -28,15 +28,13 @@
 .medium-triangle {
   grid-row: 4 / span 2;
   grid-column: 3 / span 2;
+
   border-left: 150px solid $light-yellow;
   border-top: 150px solid transparent;
-  position: absolute;
-  top: 30%;
-  left: 50%;
   opacity: 0.2;
-  grid-row: 1/3;
-  grid-column: 3/4;
-  transform: translateX(-80px) rotate(180deg);
+  grid-row: 3;
+  grid-column: 6;
+  justify-self: center;
   transition: 2s;
   &:hover {
     transform: rotate(90deg);
@@ -55,15 +53,11 @@
   border-bottom: 75px solid $yellow;
   border-left: 75px solid transparent;
   border-right: 75px solid transparent;
-  position: absolute;
-  z-index: -1;
-  top: 30%;
-  left: 70%;
   opacity: 0.2;
-  grid-row: 1/3;
-  grid-column: 7/8;
-  z-index: 1;
-  transform: translate(-25px, 65px) rotate(90deg);
+  grid-row: 3;
+  grid-column: 6;
+  justify-self: flex-end;
+  transform: translate(-200px, 150px) rotate(90deg);
   transition: 2s;
   &:hover {
     transform: rotate(180deg);
@@ -94,8 +88,7 @@
   height: 150px;
   background-color: $salmon;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  grid-column: 2/3;
-  opacity: 0.2;
+  visibility: hidden;
   transition: 2s;
   &:hover {
     transform: rotate(-75deg);
@@ -104,8 +97,11 @@
 
 @media only screen and (min-width: 768px) {
   .square {
-    grid-row: 4/5;
-    grid-column: 5/6;
+    grid-row: 3;
+    grid-column: 6;
+    align-self: flex-end;
+    justify-self: flex-start;
+    opacity: 0.2;
   }
 }
 
@@ -117,11 +113,11 @@
   width: 75px;
   background-color: $grey;
   clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
-  position: absolute;
+  grid-row: 3;
+  grid-column: 6;
+  justify-self: flex-end;
   opacity: 0.2;
-  top: 10%;
-  left: 80%;
-  transition: 2s;
+  transition: transform 2s;
   &:hover {
     transform: rotate(120deg);
   }
