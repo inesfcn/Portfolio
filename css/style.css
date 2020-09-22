@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f6f0ed;
+  font-family: "Arimo", sans-serif;
+  background-size: cover;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  /* grid-template-columns: repeat(8, 75px);
+  grid-template-rows: repeat(8, 75px); */
+  justify-content: center;
+  animation: main-div 1s 4s 1 forwards;
+  grid-template-columns: 75px 75px 75px 1fr 0.1fr;
+  grid-template-rows: 75px 75px 75px 75px 2fr 1fr;
+}
+
+@media only screen and (min-width: 767px) {
+  .main {
+    grid-template-columns: 75px 75px 75px 75px 75px 1fr 0.1fr;
+  }
+}
+
+/* @keyframes main-div {
+  100% {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+} */
+
+/* SHAPES */
+.big-triangle-pink {
+  grid-row: 2 / span 4;
+  grid-column: 5 / span 2;
+  border-right: 150px solid #db7f67;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  grid-row: 1/4;
+  grid-column: 1/3;
+  transform: rotate(-180deg);
+}
+
+.big-triangle-blue {
+  position: relative;
+  grid-row: 2 / span 2;
+  grid-column: 3 / span 4;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 150px solid #4e5283;
+  grid-row: 1/4;
+  grid-column: 1/3;
+}
+
+.medium-triangle {
+  grid-row: 4 / span 2;
+  grid-column: 3 / span 2;
+  border-left: 150px solid #fdca40;
+  border-top: 150px solid transparent;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  opacity: 0.2;
+  grid-row: 1/3;
+  grid-column: 3/4;
+  transform: translateX(-80px) rotate(180deg);
+  transition: 2s;
+}
+
+.medium-triangle:hover {
+  transform: rotate(90deg);
+}
+
+.small-triangle-yellow {
+  grid-row: 5 / span 1;
+  grid-column: 5 / span 1;
+  border-bottom: 75px solid #ec9a29;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  left: 70%;
+  opacity: 0.2;
+  grid-row: 1/3;
+  grid-column: 7/8;
+  z-index: 1;
+  transform: translate(-25px, 65px) rotate(90deg);
+  transition: 2s;
+}
+
+.small-triangle-yellow:hover {
+  transform: rotate(180deg);
+}
+
+.small-triangle-green {
+  grid-row: 3 / span 2;
+  grid-column: 4 / span 1;
+  border-left: 75px solid #4b8f8c;
+  border-top: 75px solid transparent;
+  border-bottom: 75px solid transparent;
+  grid-column: 1/3;
+  grid-row: 3/4;
+  transform: translate(35px, -37px) rotate(90deg);
+}
+
+.square {
+  grid-row: 4 / span 2;
+  grid-column: 4 / span 2;
+  width: 150px;
+  height: 150px;
+  background-color: #f06543;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  grid-column: 2/3;
+  opacity: 0.2;
+  transition: 3s;
+}
+
+@media only screen and (min-width: 768px) {
+  .square {
+    grid-row: 4/5;
+    grid-column: 4/5;
+  }
+}
+
+.square:hover {
+  transform: rotate(-75deg);
+}
+
+.polygon {
+  grid-row: 2 / span 2;
+  grid-column: 3 / span 1;
+  top: 0;
+  height: 224px;
+  width: 75px;
+  background-color: #434343;
+  clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
+  position: absolute;
+  opacity: 0.2;
+  top: 10%;
+  left: 80%;
+  transition: 2s;
+}
+
+.polygon:hover {
+  transform: rotate(120deg);
+}
+
+/* FIRST ANIMATIONS
+
+/* BIG TRIANGLES */
+/* .big-triangle-pink {
+  animation: big-pink1 0.5s 1s 1 forwards, big-pink2 1s 3s 1 forwards,
+    big-pink3 1s 4s 1 forwards;
+}
+
+@keyframes big-pink1 {
+  100% {
+    transform: translateY(78%) translateX(-14%) rotate(-45deg);
+  }
+}
+
+@keyframes big-pink2 {
+  100% {
+    transform: translate(-30%, 45%) rotate(180deg);
+  }
+}
+
+@keyframes big-pink3 {
+  100% {
+    transform: rotate(180deg) translate(0, 0);
+    grid-row: 1/3;
+    grid-column: 1/3;
+  }
+} */
+
+/* .big-triangle-blue {
+  animation: big-blue1 0.5s 1s 1 forwards, big-blue2 1s 3s 1 forwards,
+    big-blue3 1s 4s 1 forwards;
+}
+
+@keyframes big-blue1 {
+  100% {
+    transform: translate(50%, 150%);
+  }
+}
+
+@keyframes big-blue2 {
+  100% {
+    transform: translate(17.5%, 246%) rotate(-45deg);
+  }
+}
+
+@keyframes big-blue3 {
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    grid-row: 1/3;
+    grid-column: 1/3;
+  }
+} */
+
+/* .medium-triangle {
+  animation: medium1 0.5s 1s 1 forwards, medium2 1s 3s 1 forwards,
+    medium3 0.1s 3.8s 1 forwards;
+}
+
+@keyframes medium1 {
+  100% {
+    transform: translate(50%, 70%) rotate(45deg);
+  }
+}
+
+@keyframes medium2 {
+  100% {
+    transform: translate(20%, 10%) rotate(45deg);
+  }
+}
+
+@keyframes medium3 {
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+} */
+
+/* SMALL TRIANGLES */
+
+/* .small-triangle-yellow {
+  animation: small-yellow1 0.5s 1s 1 forwards, small-yellow2 1s 3s 1 forwards,
+    small-yellow3 0.1s 4s 1 forwards;
+}
+
+@keyframes small-yellow1 {
+  100% {
+    transform: translate(-67%, -413%) rotate(45deg);
+  }
+}
+
+@keyframes small-yellow2 {
+  100% {
+    transform: translate(-105%, -370%) rotate(90deg);
+  }
+}
+
+@keyframes small-yellow3 {
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+} */
+
+/* .small-triangle-green {
+  animation: small-green1 0.5s 1s 1 forwards, small-green2 1s 3s 1 forwards,
+    small-green3 1s 4s 1 forwards;
+}
+
+@keyframes small-green1 {
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+@keyframes small-green2 {
+  100% {
+    transform: translate(40%, -110%) rotate(180deg);
+  }
+}
+
+@keyframes small-green3 {
+  100% {
+    transform: translate(38px, 60px) rotate(90deg);
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+} */
+
+/* SQUARE */
+/* .square {
+  animation: square1 0.5s 1s 1 forwards, square2 1s 3s 1 forwards,
+    square3 1s 4s 1 forwards;
+}
+
+@keyframes square1 {
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes square2 {
+  100% {
+    transform: translate(-30%, -110%);
+  }
+}
+
+@keyframes square3 {
+  100% {
+    transform: translate(0, 0);
+    grid-row: 3/4;
+    grid-column: 3;
+  }
+} */
+
+/* POLYGON */
+/* .polygon {
+  animation: polygon1 0.5s 1s 1 forwards, polygon2 1s 3s 1 forwards,
+    polygon3 0.1s 4s 1 forwards;
+}
+
+@keyframes polygon1 {
+  100% {
+    transform: translate(200%, -33%);
+  }
+}
+
+@keyframes polygon2 {
+  100% {
+    transform: translate(431%, 148.5%) rotate(225deg) scaleX(-1);
+  }
+}
+
+@keyframes polygon3 {
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+} */
+
+/* ***********************page****************************** */
+
+.h1 {
+  position: absolute;
+  font-size: 1.3rem;
+  bottom: 50px;
+  left: -28px;
+  color: #f6f0ed;
+  transform: rotate(-45deg);
+}
+
+.text {
+  margin: 0 1rem 0 7rem;
+  grid-column: 1/5;
+  grid-row: 5/6;
+  font-size: 2rem;
+  position: relative;
+}
+
+.text img {
+  width: 15rem;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 30%;
+}
+
+@media only screen and (min-width: 767px) {
+  .text {
+    margin-top: 3rem;
+    grid-column: 5/7;
+    grid-row: 3/4;
+    font-size: 2.5rem;
+  }
+}
+
+.text h1 {
+  color: #f06543;
+  margin-bottom: 15px;
+}
+
+/* *****************MOVING TRIANGLES*************  */
+/* .moving-triangle,
+.moving-triangle2,
+.moving-triangle3,
+.moving-triangle4 {
+  height: 0;
+  width: 0;
+  border-bottom: 75px solid #e9ec2936;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+}
+
+.moving-triangle {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  animation: moving-triangle 20s infinite alternate-reverse;
+}
+
+.moving-triangle2 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  animation: moving-triangle2 20s infinite alternate-reverse;
+}
+
+.moving-triangle3 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  animation: moving-triangle3 20s infinite alternate-reverse;
+}
+
+.moving-triangle4 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  animation: moving-triangle4 20s infinite alternate-reverse;
+}
+
+@keyframes moving-triangle {
+  0% {
+    transform: translate(0px, 0px) rotate(20deg);
+  }
+
+  50% {
+    transform: translate(-50%, 20%);
+  }
+
+  100% {
+    transform: translate(0px, 0px) rotate(20deg);
+  }
+}
+
+@keyframes moving-triangle2 {
+  0% {
+    transform: translate(0px, 0px) rotate(45deg);
+  }
+
+  50% {
+    transform: translate(-50%, 20%) rotate(-25deg);
+  }
+
+  100% {
+    transform: translate(0px, 45deg);
+  }
+}
+
+@keyframes moving-triangle3 {
+  0% {
+    transform: translate(0px, 0px) rotate(95deg);
+  }
+
+  50% {
+    transform: translate(-70%, 20%) rotate(45deg);
+  }
+
+  100% {
+    transform: translate(0px, 95deg);
+  }
+}
+
+@keyframes moving-triangle4 {
+  0% {
+    transform: translate(0px, 0px) rotate(180deg);
+  }
+
+  50% {
+    transform: translate(-70%, 20%) rotate(225deg);
+  }
+
+  100% {
+    transform: translate(0px, 180deg);
+  }
+} */
+
+/****************** DROPDOWN MENU **************/
+/* Initial Triangle */
+.dropbtn {
+  height: 75px;
+  width: 150px;
+  background-color: #4b8f8c;
+  color: white;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  cursor: pointer;
+  border: none;
+}
+
+.dropdown {
+  z-index: 3;
+  position: relative;
+  display: inline-block;
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  height: 75px;
+  width: 150px;
+  background-color: #4b8f8c;
+  color: white;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+  color: #4b8f8c;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: white;
+  color: #4b8f8c;
+}
+
+/* **************ARROW DOWN******************* */
+.arrow-down {
+  text-align: center;
+  font-weight: 200;
+  font-size: 6rem;
+  color: #4e5283d3;
+  margin: 0 1rem 6rem 6rem;
+  grid-column: 1/6;
+  grid-row: 6/7;
+  transition: 0.3s;
+}
+
+@media only screen and (min-width: 767px) {
+  .arrow-down {
+    grid-row: 6/7;
+    grid-column: 5/7;
+  }
+}
+
+.arrow-down a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.arrow-down:hover {
+  color: #db7f67;
+  transform: translateY(40px);
+}

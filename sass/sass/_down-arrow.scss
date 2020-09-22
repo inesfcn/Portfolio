@@ -1,0 +1,27 @@
+.arrow-down {
+  text-align: center;
+  font-weight: 200;
+  font-size: 6rem;
+  color: #4e5283d3;
+  margin: 0 1rem 6rem 6rem;
+  grid-column: 1/6;
+  grid-row: 7/8;
+  transition: 0.3s;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    color: #db7f67;
+    transform: translateY(40px);
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .arrow-down {
+    grid-row: 5/6;
+    grid-column: 5/7;
+  }
+}
