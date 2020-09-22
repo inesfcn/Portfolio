@@ -6,7 +6,9 @@
   margin: 0 1rem 6rem 6rem;
   grid-column: 1/5;
   grid-row: 6;
-  transition: 0.3s;
+  transition: color 0.3s;
+  opacity: 0;
+  animation: content 1s 4.5s 1 forwards;
 
   a {
     text-decoration: none;

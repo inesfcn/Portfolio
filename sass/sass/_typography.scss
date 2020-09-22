@@ -5,6 +5,8 @@
   left: -28px;
   color: #f6f0ed;
   transform: rotate(-45deg);
+  opacity: 0;
+  animation: content 1s 4.5s 1 forwards;
 }
 
 .text {
@@ -12,7 +14,8 @@
   grid-column: 1/5;
   grid-row: 5/6;
   font-size: 2rem;
-  position: relative;
+  opacity: 0;
+  animation: content 1s 4.5s 1 forwards;
 
   h1 {
     color: $salmon;
