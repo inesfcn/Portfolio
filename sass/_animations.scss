@@ -73,6 +73,7 @@
 @keyframes medium3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -83,13 +84,14 @@
     }
 
     100% {
-      transform: translateX(50px);
-      visibility: visible;
       opacity: 0.2;
-      align-self: start;
-      justify-self: start;
+      visibility: visible;
       grid-row: 3;
       grid-column: 6;
+      align-self: start;
+      justify-self: center;
+      position: fixed;
+      transform: translate(-300px, 200px);
     }
   }
 }
@@ -115,6 +117,7 @@
 @keyframes small-yellow3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -126,12 +129,13 @@
 
     100% {
       opacity: 0.2;
-      transform: translate(0, -300px);
       visibility: visible;
-      grid-row: 4;
+      grid-row: 3;
       grid-column: 6;
-      justify-self: center;
-      align-self: center;
+      transform: translate(-400px, 400px);
+      align-self: start;
+      justify-self: end;
+      position: fixed;
     }
   }
 }
@@ -183,6 +187,7 @@
 @keyframes square3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -197,9 +202,10 @@
       visibility: visible;
       grid-row: 3;
       grid-column: 6;
-      transform: translate(150px, -50px);
-      align-self: end;
-      justify-self: start;
+      transform: translate(-150px, 200px);
+      align-self: start;
+      justify-self: end;
+      position: fixed;
     }
   }
 }
@@ -225,6 +231,7 @@
 @keyframes polygon3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -235,13 +242,14 @@
     }
 
     100% {
-      // transform: translate(-100px, 50px);
-      visibility: visible;
-      grid-row: 1/2;
-      grid-column: 5/6;
-      justify-self: flex-end;
       opacity: 0.2;
-      // position: fixed;
+      visibility: visible;
+      grid-row: 3;
+      grid-column: 6;
+      transform: translate(100px, 300px);
+      align-self: start;
+      justify-self: center;
+      position: fixed;
     }
   }
 }

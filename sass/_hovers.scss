@@ -1,0 +1,32 @@
+.site {
+  transition: 1s;
+}
+
+.site:hover {
+  transform: scaleX(85%) skewY(5deg);
+}
+
+.site:nth-child(even):hover {
+  transform: scaleX(85%) skewY(-5deg);
+}
+
+.contact-links a {
+  position: relative;
+}
+
+.contact-links a:before {
+  position: absolute;
+  right: 105%;
+  content: "";
+  background-image: url(/img/send.png);
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.contact-links a:hover::before {
+  right: 101%;
+  opacity: 1;
+}

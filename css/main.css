@@ -42,6 +42,7 @@ body {
   }
 }
 .websites {
+  margin-bottom: 12rem;
   padding: 3rem 0;
   grid-column: 2/5;
   grid-row: 2/3;
@@ -57,8 +58,8 @@ body {
   .websites {
     width: 100%;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     grid-column: 6;
     grid-row: 3;
@@ -93,6 +94,7 @@ body {
   grid-column: 3/span 2;
   border-left: 150px solid #fdca40;
   border-top: 150px solid transparent;
+  z-index: -1;
 }
 
 .small-triangle-yellow {
@@ -101,6 +103,7 @@ body {
   border-bottom: 75px solid #ec9a29;
   border-left: 75px solid transparent;
   border-right: 75px solid transparent;
+  z-index: -1;
 }
 
 .small-triangle-green {
@@ -118,6 +121,7 @@ body {
   height: 150px;
   background-color: #f06543;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  z-index: -1;
 }
 
 .polygon {
@@ -128,6 +132,7 @@ body {
   width: 75px;
   background-color: #434343;
   clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
+  z-index: -1;
 }
 
 .dropbtn {
@@ -145,6 +150,7 @@ body {
 }
 
 .dropdown {
+  opacity: 0;
   z-index: 3;
   position: fixed;
   display: inline-block;
@@ -180,11 +186,36 @@ body {
   color: #4b8f8c;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 900px) {
   .dropdown {
-    display: none;
+    opacity: 1;
+  }
+
+  .menu-mobile {
+    visibility: hidden;
   }
 }
+.menu-mobile {
+  position: absolute;
+  color: white;
+  top: -10px;
+  left: 80px;
+  transform: rotate(180deg);
+  font-size: 1.3rem;
+  opacity: 0;
+  animation: content 1s 4.5s 1 forwards;
+}
+.menu-mobile ul {
+  list-style-type: none;
+}
+.menu-mobile li {
+  margin-bottom: 10px;
+}
+.menu-mobile a {
+  text-decoration: underline;
+  color: inherit;
+}
+
 .big-triangle-pink {
   animation: big-pink1 0.5s 1s 1 forwards, big-pink2 1s 3s 1 forwards, big-pink3 1s 4s 1 forwards;
 }
@@ -246,6 +277,7 @@ body {
 @keyframes medium3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 @media only screen and (min-width: 920px) {
@@ -254,13 +286,14 @@ body {
       opacity: 0.2;
     }
     100% {
-      transform: translateX(50px);
-      visibility: visible;
       opacity: 0.2;
-      align-self: start;
-      justify-self: start;
+      visibility: visible;
       grid-row: 3;
       grid-column: 6;
+      align-self: start;
+      justify-self: center;
+      position: fixed;
+      transform: translate(-300px, 200px);
     }
   }
 }
@@ -281,6 +314,7 @@ body {
 @keyframes small-yellow3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 @media only screen and (min-width: 920px) {
@@ -290,12 +324,13 @@ body {
     }
     100% {
       opacity: 0.2;
-      transform: translate(0, -300px);
       visibility: visible;
-      grid-row: 4;
+      grid-row: 3;
       grid-column: 6;
-      justify-self: center;
-      align-self: center;
+      transform: translate(-400px, 400px);
+      align-self: start;
+      justify-self: end;
+      position: fixed;
     }
   }
 }
@@ -337,6 +372,7 @@ body {
 @keyframes square3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 @media only screen and (min-width: 920px) {
@@ -349,9 +385,10 @@ body {
       visibility: visible;
       grid-row: 3;
       grid-column: 6;
-      transform: translate(150px, -50px);
-      align-self: end;
-      justify-self: start;
+      transform: translate(-150px, 200px);
+      align-self: start;
+      justify-self: end;
+      position: fixed;
     }
   }
 }
@@ -372,6 +409,7 @@ body {
 @keyframes polygon3 {
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 @media only screen and (min-width: 920px) {
@@ -380,11 +418,14 @@ body {
       opacity: 0.2;
     }
     100% {
-      visibility: visible;
-      grid-row: 1/2;
-      grid-column: 5/6;
-      justify-self: flex-end;
       opacity: 0.2;
+      visibility: visible;
+      grid-row: 3;
+      grid-column: 6;
+      transform: translate(100px, 300px);
+      align-self: start;
+      justify-self: center;
+      position: fixed;
     }
   }
 }
@@ -426,8 +467,8 @@ body {
   opacity: 0;
   animation: content 1s 4.5s 1 forwards;
   text-align: justify;
-  color: #1a1a1a;
-  padding-right: 2rem;
+  color: #434343;
+  padding-right: 5rem;
 }
 .text h1 {
   color: #f06543;
@@ -461,28 +502,31 @@ body {
   grid-row: 2/3;
 }
 
-@media only screen and (min-width: 900px) {
-  .contact-links {
-    grid-column: 6;
-    grid-row: 3;
-  }
-}
 .contact-links a {
+  color: #434343;
   display: block;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: #1a1a1a;
   font-size: 2rem;
 }
 .contact-links a:hover {
   color: #4e5283;
 }
 
+@media only screen and (min-width: 900px) {
+  .contact-links {
+    grid-column: 6;
+    grid-row: 3;
+  }
+  .contact-links a {
+    font-size: 3rem;
+  }
+}
 .arrow-down {
   width: 20rem;
   text-align: center;
   font-weight: 200;
-  font-size: 6rem;
+  font-size: 8rem;
   color: #4e5283d3;
   margin: 0 1rem 6rem 6rem;
   grid-row: 4;
@@ -524,6 +568,88 @@ body {
 }
 img {
   width: 100%;
+}
+
+.site {
+  transition: 1s;
+}
+
+.site:hover {
+  transform: scaleX(85%) skewY(5deg);
+}
+
+.site:nth-child(even):hover {
+  transform: scaleX(85%) skewY(-5deg);
+}
+
+.contact-links a {
+  position: relative;
+}
+
+.contact-links a:before {
+  position: absolute;
+  right: 105%;
+  content: "";
+  background-image: url(/img/send.png);
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.contact-links a:hover::before {
+  right: 101%;
+  opacity: 1;
+}
+
+.form {
+  margin-top: 5rem;
+  color: #434343;
+}
+
+.form-item {
+  font-size: 2rem;
+}
+.form-item textarea, .form-item input {
+  width: 100%;
+  margin: 1rem 0 2rem 0;
+  font-size: 1.5rem;
+  padding: 2rem 1rem;
+  border: inset 3px #db7f67;
+}
+.form-item textarea:focus, .form-item input:focus {
+  border: inset 3px #4e5283;
+}
+.form-item input {
+  height: 1rem;
+}
+.form-item label {
+  font-weight: 400;
+}
+
+.form button {
+  width: 12rem;
+  padding: 1rem 2rem;
+  border: inset 3px #db7f67;
+  background: white;
+  color: #db7f67;
+  font-size: 2rem;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: 600;
+}
+.form button:hover {
+  border: inset 5px #4e5283;
+}
+
+@media only screen and (min-width: 720px) {
+  .form-item {
+    font-size: 2.5rem;
+  }
+  .form-item textarea, .form-item input {
+    font-size: 3rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

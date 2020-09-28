@@ -27,6 +27,7 @@
   grid-column: 3 / span 2;
   border-left: 150px solid $light-yellow;
   border-top: 150px solid transparent;
+  z-index: -1;
 }
 
 .small-triangle-yellow {
@@ -35,6 +36,7 @@
   border-bottom: 75px solid $yellow;
   border-left: 75px solid transparent;
   border-right: 75px solid transparent;
+  z-index: -1;
 }
 
 .small-triangle-green {
@@ -52,6 +54,7 @@
   height: 150px;
   background-color: $salmon;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  z-index: -1;
 }
 
 .polygon {
@@ -62,4 +65,5 @@
   width: 75px;
   background-color: $grey;
   clip-path: polygon(0 0%, 100% 33%, 100% 100%, 0 70%);
+  z-index: -1;
 }

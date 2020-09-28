@@ -17,8 +17,8 @@
   opacity: 0;
   animation: content 1s 4.5s 1 forwards;
   text-align: justify;
-  color: rgb(26, 26, 26);
-  padding-right: 2rem;
+  color: $grey;
+  padding-right: 5rem;
   h1 {
     color: $salmon;
     margin-bottom: 15px;
@@ -54,20 +54,23 @@
   grid-row: 2/3;
 }
 
+.contact-links a {
+  color: $grey;
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  font-size: 2rem;
+  &:hover {
+    color: $blue;
+  }
+}
+
 @media only screen and (min-width: 900px) {
   .contact-links {
     grid-column: 6;
     grid-row: 3;
-  }
-}
-
-.contact-links a {
-  display: block;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  color: rgb(26, 26, 26);
-  font-size: 2rem;
-  &:hover {
-    color: $blue;
+    & a {
+      font-size: 3rem;
+    }
   }
 }
