@@ -1,14 +1,16 @@
 .arrow-down {
+  width: 20rem;
   text-align: center;
   font-weight: 200;
   font-size: 6rem;
   color: #4e5283d3;
   margin: 0 1rem 6rem 6rem;
-  grid-column: 1/5;
-  grid-row: 6;
+  grid-row: 4;
+  grid-column: 5/7;
   transition: color 0.3s;
   opacity: 0;
   animation: content 1s 4.5s 1 forwards;
+  justify-self: center;
 
   a {
     text-decoration: none;
@@ -21,9 +23,8 @@
   }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (max-width: 900px) {
   .arrow-down {
-    grid-row: 4;
-    grid-column: 5/7;
+    visibility: hidden;
   }
 }

@@ -1,0 +1,73 @@
+.website-logo {
+  position: absolute;
+  font-size: 1.3rem;
+  bottom: 50px;
+  left: -28px;
+  color: #f6f0ed;
+  transform: rotate(-45deg);
+  opacity: 0;
+  animation: content 1s 4.5s 1 forwards;
+}
+
+.text {
+  margin: 0 1rem 0 7rem;
+  grid-column: 1/6;
+  grid-row: 5/6;
+  font-size: 2rem;
+  opacity: 0;
+  animation: content 1s 4.5s 1 forwards;
+  text-align: justify;
+  color: rgb(26, 26, 26);
+  padding-right: 2rem;
+  h1 {
+    color: $salmon;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .text {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    grid-row: 3;
+    grid-column: 5/7;
+  }
+}
+
+.title {
+  grid-column: 2/5;
+  grid-row: 1/2;
+  color: $salmon;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 900px) {
+  .title {
+    font-size: 2rem;
+    grid-column: 6;
+    grid-row: 2;
+  }
+}
+
+.contact-links {
+  grid-column: 2/5;
+  grid-row: 2/3;
+}
+
+@media only screen and (min-width: 900px) {
+  .contact-links {
+    grid-column: 6;
+    grid-row: 3;
+  }
+}
+
+.contact-links a {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  font-size: 2rem;
+  &:hover {
+    color: $blue;
+  }
+}
