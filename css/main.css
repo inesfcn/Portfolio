@@ -127,6 +127,7 @@ body {
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
   border-top: 150px solid #4e5283;
+  z-index: 2;
 }
 
 .medium-triangle {
@@ -189,6 +190,7 @@ body {
 }
 
 .dropdown {
+  z-index: 20;
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -242,7 +244,7 @@ body {
   visibility: visible;
   position: absolute;
   color: white;
-  top: -10px;
+  top: -45px;
   left: 80px;
   transform: rotate(180deg);
   font-size: 1.3rem;
@@ -253,11 +255,13 @@ body {
   list-style-type: none;
 }
 .nav-mobile li {
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 .nav-mobile a {
-  text-decoration: underline;
-  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
 }
 
 @media only screen and (min-width: 720px) {
@@ -544,9 +548,11 @@ body {
 .website-logo {
   position: absolute;
   bottom: 50px;
-  left: -28px;
+  left: -40px;
   font-size: 1.3rem;
-  color: #f6f0ed;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #f6f0ed83;
   transform: rotate(-45deg);
   opacity: 0;
   animation: content 1s 2s 1 forwards;

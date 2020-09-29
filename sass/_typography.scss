@@ -2,9 +2,11 @@
 .website-logo {
   position: absolute;
   bottom: 50px;
-  left: -28px;
+  left: -40px;
   font-size: 1.3rem;
-  color: #f6f0ed;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #f6f0ed83;
   transform: rotate(-45deg);
   opacity: 0;
   animation: content 1s 2s 1 forwards;
