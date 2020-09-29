@@ -1,15 +1,17 @@
-.site {
+// HOVER EFFECT ON SITE IMAGES
+.site-img {
   transition: 1s;
 }
 
-.site:hover {
+.site-img:hover {
   transform: scaleX(85%) skewY(5deg);
 }
 
-.site:nth-child(even):hover {
+.site-img:nth-child(even):hover {
   transform: scaleX(85%) skewY(-5deg);
 }
 
+// PAPER PLANE HOVER EFFECT ON EMAIL
 .mail a {
   position: relative;
 }
@@ -31,6 +33,7 @@
   opacity: 1;
 }
 
+// HOVER EFFECT ON CONTACTS ICONS
 .contact-links img {
   transition: 0.3s;
 }

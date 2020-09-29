@@ -1,16 +1,14 @@
 .arrow-down {
   width: 20rem;
-  text-align: center;
-  font-weight: 200;
-  font-size: 8rem;
-  color: #4e5283d3;
-  margin: 0 1rem 6rem 6rem;
   grid-row: 4;
   grid-column: 5/7;
-  transition: color 0.3s;
+  justify-self: center;
+  text-align: center;
+  font-size: 8rem;
+  color: #4e5283d3;
   opacity: 0;
   animation: content 1s 4.5s 1 forwards;
-  justify-self: center;
+  transition: color 0.3s;
 
   a {
     text-decoration: none;
