@@ -10,11 +10,11 @@
   transform: scaleX(85%) skewY(-5deg);
 }
 
-.contact-links a {
+.mail a {
   position: relative;
 }
 
-.contact-links a:before {
+.mail a:before {
   position: absolute;
   right: 105%;
   content: "";
@@ -26,7 +26,14 @@
   transition: 0.3s;
 }
 
-.contact-links a:hover::before {
+.mail a:hover::before {
   right: 101%;
   opacity: 1;
+}
+
+.contact-links img {
+  transition: 0.3s;
+}
+.contact-links img:hover {
+  transform: scale(110%);
 }

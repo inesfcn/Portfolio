@@ -4,14 +4,15 @@
   grid-column: 3;
   justify-self: center;
   opacity: 0;
-  animation: content 1s 4.5s 1 forwards;
+  animation: content 1s 2.5s 1 forwards;
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 720px) {
   .img {
     width: 15rem;
     grid-row: 3;
     grid-column: 5;
+    animation: content 1s 4.5s 1 forwards;
   }
 }
 

@@ -1,7 +1,14 @@
 // BUG TRIANGLE PINK
+
 .big-triangle-pink {
-  animation: big-pink1 0.5s 1s 1 forwards, big-pink2 1s 3s 1 forwards,
-    big-pink3 1s 4s 1 forwards;
+  animation: big-pink3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .big-triangle-pink {
+    animation: big-pink1 0.5s 1s 1 forwards, big-pink2 1s 3s 1 forwards,
+      big-pink3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes big-pink1 {
@@ -26,9 +33,16 @@
 }
 
 // BIG TRIANGLE BLUE
+
 .big-triangle-blue {
-  animation: big-blue1 0.5s 1s 1 forwards, big-blue2 1s 3s 1 forwards,
-    big-blue3 1s 4s 1 forwards;
+  animation: big-blue3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .big-triangle-blue {
+    animation: big-blue1 0.5s 1s 1 forwards, big-blue2 1s 3s 1 forwards,
+      big-blue3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes big-blue1 {
@@ -53,9 +67,16 @@
 }
 
 // MEDIUM TIRANGLE
+
 .medium-triangle {
-  animation: medium1 0.5s 1s 1 forwards, medium2 1s 3s 1 forwards,
-    medium3 1s 4s 1 forwards;
+  animation: medium3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .medium-triangle {
+    animation: medium1 0.5s 1s 1 forwards, medium2 1s 3s 1 forwards,
+      medium3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes medium1 {
@@ -97,9 +118,16 @@
 }
 
 // SMALL TRIANGLE YELLOW
+
 .small-triangle-yellow {
-  animation: small-yellow1 0.5s 1s 1 forwards, small-yellow2 1s 3s 1 forwards,
-    small-yellow3 1s 4s 1 forwards;
+  animation: small-yellow3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .small-triangle-yellow {
+    animation: small-yellow1 0.5s 1s 1 forwards, small-yellow2 1s 3s 1 forwards,
+      small-yellow3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes small-yellow1 {
@@ -142,8 +170,14 @@
 
 // SMALL TRIANGLE GREEN
 .small-triangle-green {
-  animation: small-green1 0.5s 1s 1 forwards, small-green2 1s 3s 1 forwards,
-    small-green3 1s 4s 1 forwards;
+  animation: small-green3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .small-triangle-green {
+    animation: small-green1 0.5s 1s 1 forwards, small-green2 1s 3s 1 forwards,
+      small-green3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes small-green1 {
@@ -160,6 +194,7 @@
 
 @keyframes small-green3 {
   100% {
+    opacity: 0;
     grid-column: 1/3;
     grid-row: 3/4;
     transform: translate(35px, -37px) rotate(90deg);
@@ -168,8 +203,14 @@
 
 // SQUARE
 .square {
-  animation: square1 0.5s 1s 1 forwards, square2 1s 3s 1 forwards,
-    square3 1s 4s 1 forwards;
+  animation: square3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .square {
+    animation: square1 0.5s 1s 1 forwards, square2 1s 3s 1 forwards,
+      square3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes square1 {
@@ -211,9 +252,16 @@
 }
 
 //  POLYGON
+
 .polygon {
-  animation: polygon1 0.5s 1s 1 forwards, polygon2 1s 3s 1 forwards,
-    polygon3 1s 4s 1 forwards;
+  animation: polygon3 1s 2s 1 forwards;
+}
+
+@media only screen and (min-width: 720px) {
+  .polygon {
+    animation: polygon1 0.5s 1s 1 forwards, polygon2 1s 3s 1 forwards,
+      polygon3 1s 4s 1 forwards;
+  }
 }
 
 @keyframes polygon1 {
@@ -262,7 +310,7 @@
   }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 720px) {
   @keyframes main-div {
     100% {
       grid-template-columns: 75px 75px 75px 75px 75px 1fr 0.1fr;

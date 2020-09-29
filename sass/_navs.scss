@@ -14,6 +14,7 @@
 
 .dropdown {
   opacity: 0;
+  visibility: hidden;
   z-index: 3;
   position: fixed;
   display: inline-block;
@@ -51,17 +52,35 @@
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 720px) {
   .dropdown {
     opacity: 1;
+    visibility: visible;
   }
 
-  .menu-mobile {
+  .big-triangle-pink-nav {
+    visibility: hidden;
+  }
+
+  .nav-mobile {
     visibility: hidden;
   }
 }
 
-.menu-mobile {
+.big-triangle-pink-nav {
+  border-right: 150px solid $pink;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  grid-row: 1/4;
+  grid-column: 1/3;
+  transform: rotate(-180deg);
+  position: fixed;
+  z-index: 10;
+  opacity: 0;
+  animation: content 1s 2.5s 1 forwards;
+}
+
+.nav-mobile {
   position: absolute;
   color: white;
   top: -10px;
@@ -79,5 +98,5 @@
     color: inherit;
   }
   opacity: 0;
-  animation: content 1s 4.5s 1 forwards;
+  animation: content 1s 2.5s 1 forwards;
 }
